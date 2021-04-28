@@ -2,7 +2,7 @@
   "name": "excel-clone",
   "version": "1.0.0",
   "description": "",
-  "main": "webpack.config.js",
+  "main": "webpack.cтonfig.js",
   "scripts": {
     "start": "webpack --mode=development",
     "build": "webpack --mode=production"
@@ -13,15 +13,27 @@
   },
   "keywords": [],
   "author": "Torex",
+  "browserslist": "> 0.25%, not dead",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Torexxx/excel-clone/issues"
   },
   "homepage": "https://github.com/Torexxx/excel-clone#readme",
   "devDependencies": {
+    "@babel/core": "^7.13.16",
+    "@babel/preset-env": "^7.13.15",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^5.2.4",
     "favicons-webpack-plugin": "^5.0.2",
     "html-webpack-plugin": "^5.3.1",
+    "mini-css-extract-plugin": "^1.5.1",
+    "sass": "^1.32.11",
+    "sass-loader": "^11.0.1",
     "webpack": "^5.36.0",
     "webpack-cli": "^4.6.0"
+  },
+  "dependencies": {
+    "core-js": "^3.9.0",
+    "regenerator-runtime": "^0.13.7"
   }
 }

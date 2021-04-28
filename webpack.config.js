@@ -1,6 +1,8 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
 
 module.exports = {
     context: path.resolve(__dirname, 'src'),
@@ -22,6 +24,31 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: './index.html'
         }),
-        new FaviconsWebpackPlugin('./favicon.ico')
+        new FaviconsWebpackPlugin('./favicon.ico'),
+        new MiniCssExtractPlugin({
+            filename: '[name].bundle.css',
+        })
     ],
+    module: {
+        rules: [
+            {
+                test: /\.s[ac]ss$/i,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    "css-loader",
+                    "sass-loader",
+                ],
+            },
+            {
+                test: /\.m?js$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env']
+                    }
+                }
+            }
+        ],
+    },
 };

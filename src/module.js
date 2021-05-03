@@ -14,3 +14,5 @@ async function start() {
 }
 
 start()
+
+console.log('???')

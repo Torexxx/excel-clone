@@ -1,9 +1,13 @@
-$body-color: green;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+@import 'mixins';
+@import 'variables';
 
-body {
-  background: $body-color;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-body div {
-  color: red
+body {
+  font-family: Roboto, sans-serif;
 }

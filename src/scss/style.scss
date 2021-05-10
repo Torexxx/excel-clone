@@ -2,6 +2,11 @@
 @import 'mixins';
 @import 'variables';
 
+@import 'header';
+@import 'formula';
+@import 'toolbar';
+@import 'table';
+
 * {
   padding: 0;
   margin: 0;
@@ -10,4 +15,10 @@
 
 body {
   font-family: Roboto, sans-serif;
+  font-size: 12px;
+}
+
+.excel {
+  position: relative;
+  color: #888;
 }

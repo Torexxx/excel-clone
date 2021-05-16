@@ -7,4 +7,5 @@ module.exports = {
   },
 
   extends: ['eslint:recommended', 'google'],
+  rules: {'require-jsdoc': 0},
 };

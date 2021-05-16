@@ -50,7 +50,7 @@ module.exports = (env, argv) => {
       extensions: ['.js', '.ts'],
       alias: {
         '@': path.resolve(__dirname, 'src'),
-        '@core': path.resolve(__dirname, 'src', 'core'),
+        '@core': path.resolve(__dirname, 'src/core'),
       },
     },
     module: {

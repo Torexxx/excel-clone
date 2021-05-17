@@ -39,7 +39,7 @@ module.exports = (env, argv) => {
     devtool: isDev ? 'inline-source-map' : false,
     plugins: plugins(),
     entry: {
-      main: './index.ts',
+      main: './index.js',
     },
     output: {
       path: path.resolve(__dirname, 'dist'),

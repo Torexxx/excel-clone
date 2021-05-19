@@ -7,5 +7,8 @@ module.exports = {
   },
 
   extends: ['eslint:recommended', 'google'],
-  rules: {'require-jsdoc': 0},
+  rules: {
+    'require-jsdoc': 'off',
+    'linebreak-style': 0,
+  },
 };

@@ -11,6 +11,19 @@ module.exports = (env, argv) => {
   const filename = (ext) =>
       isProd ? `[name].[contenthash].bundle.${ext}` : `[name].bundle.${ext}`;
 
+  const jsLoaders = () => {
+    const loaders = [
+      {
+        loader: 'babel-loader',
+        options: {
+          presets: ['@babel/preset-env'],
+          plugins: ['@babel/plugin-proposal-class-properties'],
+        },
+      },
+    ];
+    return loaders;
+  };
+
   const plugins = () => {
     const base = [
       new FaviconsWebpackPlugin('./favicon.png'),
@@ -66,12 +79,7 @@ module.exports = (env, argv) => {
         {
           test: /\.m?js$/,
           exclude: /node_modules/,
-          use: {
-            loader: 'babel-loader',
-            options: {
-              presets: ['@babel/preset-env'],
-            },
-          },
+          use: jsLoaders(),
         },
         {
           test: /\.tsx?$/,
